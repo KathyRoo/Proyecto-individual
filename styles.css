@@ -7,11 +7,10 @@
 }
 
 body{
-    height: 100vh;
-    margin: 0;
     display: grid;
     place-items: center;
     color: rgb(78, 87, 78);
+    background-color: rgb(239, 244, 247);
   }
 
   
