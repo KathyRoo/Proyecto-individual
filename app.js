@@ -99,5 +99,5 @@ const pool = new Pool({
 
 // Hacer que la app escuche el puerto 3000
 app.listen(puerto, () => {
-  console.log('Servicio levantado');
+  console.log(`Servicio levantado en http://localhost:${puerto}` );
 });
