@@ -1,285 +1,309 @@
-
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
-    <!-- Fontawesome Icons -->
-	  <script src="https://kit.fontawesome.com/ae4293d1b9.js" crossorigin="anonymous"></script>
+<head>
+  {{> head}}
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <title>Inicio</title>
 
-    <link rel="stylesheet" href="styles.css">
+</head>
 
-
-<!-- <script src='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css' rel='stylesheet' /> -->
-
-
-    <title>Inicio</title>
-
-  </head>
-  <body>
-
-    
-
-<!-------------------------------------------------------
+<body>
+  <!-------------------------------------------------------
 -                     HEADER                            -
 -------------------------------------------------------->
 
+  {{> header}}
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary mb-3 mt-2">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="/img/logo.jpg" alt="" height="35px" width="35px"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="tips">Tips</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Más</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="puntos">Puntos de reciclaje</a></li>
-            <li><a class="dropdown-item" href="login">Login</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="puntos">Suscríbete</a></li>
+
+  <!-------------------------------------------------------
+-                        MAIN                           -
+-------------------------------------------------------->
+  <div>
+
+    <div class="container text-center row-cols-md-7">
+      <h3 class="mb-5 mt-3">Puntos de reciclaje</h3>
+    </div>
+
+    <div class="container" id="puntos">
+      <div class="row">
+        <div class="card mb-3 col-3 me-1" style="width: 16rem;">
+          <img src="/img/centros.jpg" class="card-img-top" alt="..." height="170px" width="170px">
+          <div class="card-body">
+            <h5 class="card-title">Centro Villa Alemana</h5>
+            <p class="card-text">
+            <div class="circular-progress jscript"></div>
+            </p>
+            <h1 id="porc"></h1>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Disponibilidad</li>
+            <li class="list-group-item">Botellas plásticas y de vidrio</li>
+            <li class="list-group-item">Calle Progreso 962, Villa Alemana, Valparaíso, Chile</li>
           </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled"></a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Buscar</button>
-      </form>
-    </div>
-  </div>
-</nav>
+          <div class="card-body">
+            <a href="#map" class="card-link">¿Cómo llegar?</a>
+            <a href="#contact" class="card-link">¿Comentarios?</a>
+          </div>
+        </div>
 
+        <div class="card mb-3 col-3 me-1" style="width: 16rem;">
+          <img src="/img/centros2.jpg" class="card-img-top" alt="..." height="170px" width="170px">
+          <div class="card-body">
+            <h5 class="card-title">Centro Quilpué</h5>
+            <p class="card-text">
+            <div class="circular-progress verde progress-20"></div>
+            </p>
+            <h1 id="porc"></h1>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Disponibilidad alta</li>
+            <li class="list-group-item">Botellas plásticas y de vidrio</li>
+            <li class="list-group-item">Calle Claudio Vicuña 524, Quilpué, Valparaíso, Chile</li>
+          </ul>
+          <div class="card-body">
+            <a href="#map" class="card-link">¿Cómo llegar?</a>
+            <a href="#contact" class="card-link">¿Comentarios?</a>
+          </div>
+        </div>
 
+        <div class="card mb-3 col-3 me-1" style="width: 16rem;">
+          <img src="/img/centros4.jpg" class="card-img-top" alt="..." height="170px" width="170px">
+          <div class="card-body">
+            <h5 class="card-title">Centro Viña</h5>
+            <p class="card-text">
+            <div class="circular-progress html5"></div>
+            </p>
+            <h1 id="porc"></h1>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Disponibilidad</li>
+            <li class="list-group-item">Botellas plásticas, de vidrio, cartón, papel</li>
+            <li class="list-group-item">Calle Sucre 555, Viña del mar, Valparaíso, Chile</li>
+          </ul>
+          <div class="card-body">
+            <a href="#map" class="card-link">¿Cómo llegar?</a>
+            <a href="#contact" class="card-link">¿Comentarios?</a>
+          </div>
+        </div>
 
-<div class="container text-center row-cols-md-7">
-<h2 class="mb-2 mt-3">Bienvenido a DondeReciclo.cl</h2>
-<p class="mb-5 mt-3">Aquí puedes encontrar tu punto de reciclaje más cercano que aún cuente con disponibilidad.</p>
-</div>
+        <div class="card mb-3 col-3 me-1" style="width: 16rem;">
+          <img src="/img/centros3.jpg" class="card-img-top" alt="..." height="170px" width="170px">
+          <div class="card-body">
+            <h5 class="card-title">Centro Valparaiso</h5>
+            <p class="card-text">
+            <div class="circular-progress css3">
+              </p>
+              <h1 id="porc"></h1>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Disponibilidad baja</li>
+              <li class="list-group-item">¿Tienes comentarios?</li>
+              <li class="list-group-item">Avenida Brasil 458, Valparaíso, Chile</li>
+            </ul>
+            <div class="card-body">
+              <a href="#map" class="card-link">¿Cómo llegar?</a>
+              <a href="#contact" class="card-link">¿Comentarios?</a>
+            </div>
+          </div>
+        </div>
 
-
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="/img/mix2.jpg" class="d-block w-100" alt="..." height="200px" width="300px">
       </div>
-      <div class="carousel-item">
-        <img src="/img/bottles.jpg" class="d-block w-100" alt="..." height="200px" width="300px">
-      </div>
-      <div class="carousel-item">
-        <img src="/img/plastic-glass.jpg" class="d-block w-100" alt="..." height="200px" width="300px">
-      </div>
-    </div>
-  </div>
 
-<!-- About us -->
 
-<div class="container">
-    <div class="row d-flex mb-5 about us">
-      <div class="col-md-4 d-flex">
-        <div class="info bg-white p-4 shadow-sm rounded">
-          <p class="text-center"><strong>Misión</strong><br>Mejorar y hacer más eficiente el sistema de reciclaje en Chile, crear consciencia y
-            evitar que las personas lleven basura a los lugares de recolección.</p>
+
+      <!--suscripcion-->
+
+      <section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light mb-5 mt-5">
+        <div id="suscrip">
+          <div class="container py-4">
+            <div class="row d-flex justify-content-center py-5">
+              <div class="col-md-6">
+                <h2 style="font-size: 22px;" class="mt-5">Suscríbete</h2>
+                <span>Recibe novedades y tips de reciclaje por e-mail</span>
+              </div>
+              <div class="col-md-6 d-flex align-items-center">
+                <form action="#" class="subscribe-form">
+                  <div class="form-group d-flex">
+                    <input type="text" class="form-control" placeholder="Ingresa tu email">
+                    <input type="submit" value="Suscríbete" class="submit px-3">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-md-4 d-flex">
-        <div class="info bg-white p-4 shadow-sm rounded">
-          <p class="text-center"><strong>Visión</strong><br>Mejorar el sistema existente para en un futuro implementar y hacer más popular el reciclaje de cartón, papel y desechos orgánicos.</p>
-        </div>
-      </div>
-      <div class="col-md-4 d-flex">
-        <div class="info bg-white p-4 shadow-sm rounded">
-          <p class="text-center"><strong>Valores</strong><br>Crear un sistema lo más transparente y eficiente posible para el país, además de educar e informar a las personas.</p>
-        </div>
-      </div>
-    </div>
-
-
-<!-- login -->
-{{!-- 
-  <div>
-      <h6>¿Eres socio?</h6> 
-    <h5>Iniciar sesión</h5>
-
-    <form id="login-form">
-  <div>
-    <label id="label" for="username">Username:</label>
-    <input id="input1" type="text" id="username" name="username" required>
-  </div>
-  <div>
-    <label for="password">Password:</label>
-    <input id="input1" type="password" id="password" name="password" required>
-  </div>
-  <button id="button2" type="submit">Log In</button>
-</form>
- </div> --}}
-
-<!-- login2 -->
-{{!-- 
-  <div>
-
-  <div class="container">
-    <div class="card">
-      <h2>Inicio de sesión</h2>
-      <form id="login-form">
-        <div class="form-group">
-          <label for="username">Nombre de usuario</label>
-          <input type="text" id="username" name="username" required>
-        </div>
-        <div class="form-group">
-          <label for="password">Contraseña</label>
-          <input type="password" id="password" name="password" required>
-        </div>
-        <button type="submit" class="btn">Iniciar sesión</button>
-      </form>
-      <p class="message">¿No tienes una cuenta? <a href="#" id="register-link">Regístrate</a></p>
-    </div>
-
-    <div class="card hidden" id="register-form-container">
-      <h2>Registro de cuenta</h2>
-      <form id="register-form">
-        <div class="form-group">
-          <label for="new-username">Nombre de usuario</label>
-          <input type="text" id="new-username" name="new-username" required>
-        </div>
-        <div class="form-group">
-          <label for="new-password">Contraseña</label>
-          <input type="password" id="new-password" name="new-password" required>
-        </div>
-        <div class="form-group">
-          <label for="confirm-password">Confirmar contraseña</label>
-          <input type="password" id="confirm-password" name="confirm-password" required>
-        </div>
-        <button type="submit" class="btn">Registrarse</button>
-      </form>
-      <p class="message">¿Ya tienes una cuenta? <a href="#" id="login-link">Inicia sesión</a></p>
-    </div>
-  </div>
-
-  </div> --}}
-
-
-   
-    
-   
-    
-   
-    
-    
-    
-
-
-
-
-<!--footer-->
-
-<div class="container my-5">
-
-    <footer class="text-center text-white" style="background-color: #f1f1f1;">
-    <!-- Grid container -->
-    <div class="container pt-4">
-      <!-- Section: Social media -->
-      <section class="mb-1">
-        <!-- Facebook -->
-        <a
-          class="btn btn-link btn-floating btn-lg text-dark m-1"
-          href="#!"
-          role="button"
-          data-mdb-ripple-color="dark"
-          ><i class="fa-brands fa-square-facebook fa-sm"></i>
-        </a>
-  
-        <!-- Twitter -->
-        <a
-          class="btn btn-link btn-floating btn-lg text-dark m-1"
-          href="#!"
-          role="button"
-          data-mdb-ripple-color="dark"
-          ><i class="fa-brands fa-square-twitter fa-sm"></i>
-        </a>
-  
-        <!-- Google -->
-        <a
-          class="btn btn-link btn-floating btn-lg text-dark m-1"
-          href="#!"
-          role="button"
-          data-mdb-ripple-color="dark"
-          ><i class="fa-brands fa-google fa-sm"></i>
-        </a>
-  
-        <!-- Instagram -->
-        <a
-          class="btn btn-link btn-floating btn-lg text-dark m-1"
-          href="#!"
-          role="button"
-          data-mdb-ripple-color="dark"
-          ><i class="fa-brands fa-square-instagram fa-sm"></i>
-        </a>
-  
-        <!-- Linkedin -->
-        <a
-          class="btn btn-link btn-floating btn-lg text-dark m-1"
-          href="#!"
-          role="button"
-          data-mdb-ripple-color="dark"
-          ><i class="fa-brands fa-linkedin fa-sm"></i>
-        </a>
-        <!-- Github -->
-        <a
-          class="btn btn-link btn-floating btn-lg text-dark m-1"
-          href="#!"
-          role="button"
-          data-mdb-ripple-color="dark"
-          ><i class="fa-brands fa-github fa-sm"></i>
-        </a>
       </section>
-      <!-- Section: Social media -->
-    </div>
-    <!-- Grid container -->
-  
-    <!-- Copyright -->
-    <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2023 DondeReciclo.cl
-      <a class="text-dark" href="https://mdbootstrap.com/"/a>
-    </div>
-    <!-- Copyright -->
-  </footer>
-    
-  </div>
 
-   
 
-  <!-- Optional JavaScript; choose one of the two! -->
+      <!-- Map -->
 
-  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  <!-- Option 2: Separate Popper and Bootstrap JS -->
-  <!--
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-  -->
+      <div class="col-md-6 d-flex mt-2 mb-2" id="map">
+        <div>
+          <map name="Selecciona tu ubicación">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d107070.0703128334!2d-71.60046787685174!3d-33.005365283405105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689de84ead41255%3A0x8e5fde76df3d413f!2zVmnDsWEgZGVsIE1hciwgVmFscGFyYcOtc28!5e0!3m2!1ses-419!2scl!4v1672961267372!5m2!1ses-419!2scl"
+              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </map>
+        </div>
+      </div>
+
+
+      <!-- <div id='map' style='width: 400px; height: 300px;'></div>
+      <script>
+      mapboxgl.accessToken = 'pk.eyJ1Ijoia2F0aHlyb29vIiwiYSI6ImNsZDNuMHZ2ZjAxMXIzdnMzZzByazJ1ODIifQ.9C1Gsbpdt-nqI6JVwwmBtg';
+      const map = new mapboxgl.Map({
+          container: 'map', // container ID
+          style: 'mapbox://styles/mapbox/streets-v12', // style URL
+          center: [-74.5, 40], // starting position [lng, lat]
+          zoom: 9, // starting zoom
+      });
+
+      </script> -->
+
+      <h4>Mapa</h4>
+
+      <nav class="navbar bg-body-tertiary mt-2 mb-5">
+        <div class="container-fluid">
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="ingresa tu ubicación" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+          </form>
+        </div>
+      </nav>
+
+
+      <h3>
+        ¿Tienes comentarios, sugerencias?
+      </h3>
+
+      <br>
+
+      <h4>
+        ¡Escríbenos!
+      </h4>
+
+
+
+      <!-- Contact form -->
+
+      <div class="container" id="contact">
+        <h1 id="react"></h1>
+
+        <div class="row block-9 mt-5">
+          <div class="col-md-6 order-md-last d-flex">
+            <form action="#" class="bg-white p-5 contact-form shadow-sm rounded needs-validation">
+              <div class="form-group">
+                <input type="text" class="form-control rounded" id="nombre" placeholder="Nombre" required>
+              </div>
+              <div class="invalid-feedback">
+                Porfavor ingrese un nombre
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control rounded" id="correo" placeholder="Correo Electrónico" required>
+              </div>
+              <div class="invalid-feedback">
+                Porfavor ingrese un nombre
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control rounded" id="asunto" placeholder="Asunto" required>
+              </div>
+              <div class="invalid-feedback">
+                Porfavor ingrese un nombre
+              </div>
+              <div class="form-group">
+                <textarea name="" id="mensaje" cols="30" rows="7" class="form-control rounded" placeholder="Mensaje"
+                  required></textarea>
+              </div>
+              <div class="invalid-feedback">
+                Porfavor ingrese un nombre
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Enviar" class="btn btn-primary py-2 px-5 container">
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+        <!--footer-->
+
+        <div class="container my-5">
+
+          <footer class="text-center text-white" style="background-color: #f1f1f1;">
+            <!-- Grid container -->
+            <div class="container pt-4">
+              <!-- Section: Social media -->
+              <section class="mb-1">
+                <!-- Facebook -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                  data-mdb-ripple-color="dark"><i class="fa-brands fa-square-facebook fa-sm"></i>
+                </a>
+
+                <!-- Twitter -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                  data-mdb-ripple-color="dark"><i class="fa-brands fa-square-twitter fa-sm"></i>
+                </a>
+
+                <!-- Google -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                  data-mdb-ripple-color="dark"><i class="fa-brands fa-google fa-sm"></i>
+                </a>
+
+                <!-- Instagram -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                  data-mdb-ripple-color="dark"><i class="fa-brands fa-square-instagram fa-sm"></i>
+                </a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                  data-mdb-ripple-color="dark"><i class="fa-brands fa-linkedin fa-sm"></i>
+                </a>
+                <!-- Github -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                  data-mdb-ripple-color="dark"><i class="fa-brands fa-github fa-sm"></i>
+                </a>
+              </section>
+              <!-- Section: Social media -->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+              © 2023 DondeReciclo.cl
+              <a class="text-dark" href="https://mdbootstrap.com/" /a>
+            </div>
+            <!-- Copyright -->
+          </footer>
+
+        </div>
+
+      </div>
+
+
+      <!-- Optional JavaScript; choose one of the two! -->
+
+      <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+      <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+      <!-- Option 2: Separate Popper and Bootstrap JS -->
+      <!--
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+      -->
+
+        <script
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+        <script src="js/google-map.js"></script>
+
+        {{> footer-scripts}}
 
 
 </body>
+
 </html>

@@ -1,6 +1,6 @@
 // Cargar modulos
 const express = require('express');
-const hbs = require('hbs');
+var hbs = require('express-hbs');
 const fs = require('fs');
 const path = require('path');
 
@@ -13,10 +13,13 @@ app.use(express.static('public'));
 // Analisis archivos json
 app.use(express.json());
 
-// Configurar el servidor para usar el motor hbs
+// Use `.hbs` for extensions and find partials in `views/partials`.
+app.engine('hbs', hbs.express4({
+  partialsDir: __dirname + '/views/partials'
+}));
 app.set('view engine', 'hbs');
-hbs.registerPartials(__dirname + '/views/partials');
-
+app.set('views', __dirname + '/views');
+  
 
 app.get('/', (req, res) => {
     res.render('index');
@@ -27,8 +30,8 @@ app.get('/tips', (req, res) => {
   res.render('tips');
 });
 
-app.get('/puntos', (req, res) => {
-  res.render('puntos');
+app.get('/nosotros', (req, res) => {
+  res.render('nosotros');
 });
 
 app.get('/login', (req, res) => {
