@@ -1,3 +1,7 @@
+CREATE DATABASE reciclaje;
+
+\c reciclaje;
+
 CREATE TABLE puntos_de_reciclaje (
   id INT PRIMARY KEY,
   nombre VARCHAR(255),

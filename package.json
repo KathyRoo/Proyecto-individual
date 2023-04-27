@@ -1,4 +1,22 @@
 {
+  "name": "reciclaje",
+  "version": "1.0.0",
+  "description": "Gestión de puntos de reciclaje",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KathyRoo/Proyecto-individual.git"
+  },
+  "author": "Kathy Roo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KathyRoo/Proyecto-individual/issues"
+  },
+  "homepage": "https://github.com/KathyRoo/Proyecto-individual#readme",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
   "dependencies": {
     "express": "^4.18.2",
     "hbs": "^4.2.0",
