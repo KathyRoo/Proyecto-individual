@@ -22,10 +22,23 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-// Hacer que la app escuche el puerto 3000
-app.listen(puerto, () => {
-    console.log('Servicio levantado');
+
+app.get('/tips', (req, res) => {
+  res.render('tips');
 });
+
+app.get('/puntos', (req, res) => {
+  res.render('puntos');
+});
+
+app.get('/login', (req, res) => {
+  res.render('login');
+});
+
+app.get('/register', (req, res) => {
+  res.render('register');
+});
+
 
 // Insertar mas archivos JSON dentro de una pagina
     // const data1 = require('./data1.json');
@@ -46,36 +59,45 @@ const pool = new Pool({
 })
 
 
-pool.query('SELECT * FROM reciclaje', (error, results) => {
-    if (error) {
-      throw error
-    }
-    console.table(results.rows);
-})
+// pool.query('SELECT * FROM reciclaje', (error, results) => {
+//     if (error) {
+//       throw error
+//     }
+//     console.table(results.rows);
+// })
 
-let nombre = 'reciclaje1'
-pool.query('SELECT * FROM usuario where nombre = $1', [nombre], (error, results) => {
-    if (error) {
-      throw error
-    }
-    console.table(results.rows);
-})
+// let nombre = 'reciclaje1'
+// pool.query('SELECT * FROM usuario where nombre = $1', [nombre], (error, results) => {
+//     if (error) {
+//       throw error
+//     }
+//     console.table(results.rows);
+// })
 
 
-let nombre2 = "reciclaje1' or 1=1--"
-pool.query('SELECT * FROM usuario where nombre = $1', [nombre2], (error, results) => {
-    if (error) {
-      throw error
-    }
-    console.table(results.rows);
-})
+// let nombre2 = "reciclaje1' or 1=1--"
+// pool.query('SELECT * FROM usuario where nombre = $1', [nombre2], (error, results) => {
+//     if (error) {
+//       throw error
+//     }
+//     console.table(results.rows);
+// })
 
-let nombre3 = "reciclaje1'; select * from sbo.master -- "
+// let nombre3 = "reciclaje1'; select * from sbo.master -- "
 
-console.log("SELECT * FROM reciclaje where nombre = '" + nombre3 +"'")
-pool.query("SELECT * FROM reciclaje where nombre = '" + nombre3 +"'",  (error, results) => {
-    if (error) {
-      throw error
-    }
-    console.table(results.rows);
-})
+// console.log("SELECT * FROM reciclaje where nombre = '" + nombre3 +"'")
+// pool.query("SELECT * FROM reciclaje where nombre = '" + nombre3 +"'",  (error, results) => {
+//     if (error) {
+//       throw error
+//     }
+//     console.table(results.rows);
+// })
+
+
+
+
+
+// Hacer que la app escuche el puerto 3000
+app.listen(puerto, () => {
+  console.log('Servicio levantado');
+});

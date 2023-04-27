@@ -98,6 +98,66 @@ function updateProgress(timestamp) {
 requestAnimationFrame(updateProgress);
 
 
+//login
+
+// const loginForm = document.getElementById('login-form');
+
+// loginForm.addEventListener('submit', (e) => {
+//   e.preventDefault();
+
+//   const username = document.getElementById('username').value;
+//   const password = document.getElementById('password').value;
+
+//   // Aquí se pueden agregar las validaciones necesarias para verificar la información de inicio de sesión
+
+//   // Ejemplo básico de verificación de información de inicio de sesión
+//   if (username === 'usuario' && password === 'contraseña') {
+//     alert('Inicio de sesión exitoso!');
+//   } else {
+//     alert('Nombre de usuario o contraseña incorrectos. Por favor, inténtelo de nuevo.');
+//   }
+// });
+
+//login
+
+const loginFormContainer = document.getElementById('login-form-container');
+const registerFormContainer = document.getElementById('register-form-container');
+const loginLink = document.getElementById('login-link');
+const registerLink = document.getElementById('register-link');
+const loginForm = document.getElementById('login-form');
+const registerForm = document.getElementById('register-form');
+
+// Muestra el formulario de inicio de sesión y oculta el de registro
+function showLoginForm() {
+  loginFormContainer.style.display = 'flex';
+  registerFormContainer.style.display = 'none';
+}
+
+// Muestra el formulario de registro y oculta el de inicio de sesión
+function showRegisterForm() {
+  loginFormContainer.style.display = 'none';
+  registerFormContainer.style.display = 'flex';
+}
+
+// Envía los datos de inicio de sesión
+function login(event) {
+  event.preventDefault();
+  const username = loginForm.elements.username.value;
+  const password = loginForm.elements.password.value;
+  // Aquí puedes enviar los datos del formulario a través de una petición AJAX o a través de una redirección a una página que procese los datos del formulario
+}
+
+// Agrega los eventos a los enlaces de inicio de sesión y registro
+loginLink.addEventListener('click', showLoginForm);
+registerLink.addEventListener('click', showRegisterForm);
+
+// Agrega el evento de envío de inicio de sesión al formulario de inicio de sesión
+loginForm.addEventListener('submit', login);
+
+
+
+
+
 
 
 
