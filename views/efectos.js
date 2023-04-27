@@ -156,6 +156,9 @@ loginForm.addEventListener('submit', login);
 
 
 
+document.getElementById("volver-al-inicio").addEventListener("click", function(){
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
 
 
