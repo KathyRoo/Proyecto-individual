@@ -5,32 +5,32 @@ CREATE TABLE puntos_de_reciclaje (
   id INT PRIMARY KEY,
   nombre VARCHAR(255),
   direccion VARCHAR(255),
-  tipo_de_residuos VARCHAR(255)
+  comuna VARCHAR(255),
+  tipo_residuos VARCHAR(255)
 );
 
-CREATE TABLE disponibilidad (
+CREATE TABLE capacidad (
   id INT PRIMARY KEY,
   punto_de_reciclaje_id INT,
-  fecha DATE,
-  horario_de_apertura TIME,
-  horario_de_cierre TIME,
+  fecha_registro TIMESTAMP  NOT NULL,
+  capacidad INT NOT NULL DEFAULT 0,
   FOREIGN KEY (punto_de_reciclaje_id) REFERENCES puntos_de_reciclaje(id)
 );
 
-INSERT INTO puntos_de_reciclaje (id, nombre, direccion, tipo_de_residuos)
+INSERT INTO puntos_de_reciclaje (id, nombre, direccion, comuna, tipo_residuos )
 VALUES
-  (1, 'Punto de reciclaje 1', 'Calle Progreso 962, Villa Alemana', 'Papel, vidrio, plástico, metal'),
-  (2, 'Punto de reciclaje 2', 'Calle Claudio Vicuña 524, Quilpue', 'Papel, plástico'),
-  (3, 'Punto de reciclaje 3', 'Calle Sucre 555, Viña del mar', 'Vidrio, metal'),
-  (4, 'Punto de reciclaje 4', 'Avenida Brasil 458, Valparaiso', 'Papel, vidrio');
+  (1, 'Punto de reciclaje 1', 'Calle Progreso 962', 'Villa Alemana', 'Papel, vidrio, plástico, metal'),
+  (2, 'Punto de reciclaje 2', 'Calle Claudio Vicuña 524', 'Quilpue', 'Papel, plástico'),
+  (3, 'Punto de reciclaje 3', 'Calle Sucre 555', 'Viña del mar', 'Vidrio, metal'),
+  (4, 'Punto de reciclaje 4', 'Avenida Brasil 458', 'Valparaiso', 'Papel, vidrio');
 
 
-INSERT INTO disponibilidad (id, punto_de_reciclaje_id, fecha, horario_de_apertura, horario_de_cierre)
+INSERT INTO capacidad (id, punto_de_reciclaje_id, fecha_registro, capacidad )
 VALUES
-  (1, 1, '2023-05-01', '09:00:00', '13:00:00'),
-  (2, 1, '2023-05-01', '14:00:00', '18:00:00'),
-  (3, 1, '2023-05-02', '09:00:00', '13:00:00'),
-  (4, 1, '2023-05-02', '14:00:00', '18:00:00');
+  (1, 1, '2023-05-01 14:00:00', 20),
+  (2, 2, '2023-05-01 14:00:00', 30),
+  (3, 3, '2023-05-02 14:00:00', 40),
+  (4, 4, '2023-05-02 14:00:00', 50);
   
 
 

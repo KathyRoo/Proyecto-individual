@@ -4,6 +4,10 @@ var hbs = require('express-hbs');
 const fs = require('fs');
 const path = require('path');
 
+const DatabaseManager = require('./lib/database');
+
+const dm = new DatabaseManager();
+
 // Crear servidor express
 const app = express();
 const puerto = 3000;
@@ -25,7 +29,6 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-
 app.get('/tips', (req, res) => {
   res.render('tips');
 });
@@ -40,6 +43,17 @@ app.get('/login', (req, res) => {
 
 app.get('/register', (req, res) => {
   res.render('register');
+});
+
+
+app.get('/api/puntos-de-reciclaje', async (req, res) => {
+  try {
+    const result = await dm.getPuntosReciclaje();
+    res.json(result.rows);
+  } catch (error) {
+    console.log('error', error);
+    res.status(500).json({ error: error});
+  }
 });
 
 
