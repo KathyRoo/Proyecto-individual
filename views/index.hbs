@@ -286,6 +286,25 @@
 
         {{> footer-scripts}}
 
+        <script>
+          async function getPuntosReciclaje() {
+            const response = await fetch("/api/puntos-de-reciclaje");
+            const jsonData = await response.json();
+            return jsonData;
+          }
+
+          const renderPuntosReciclaje = async () => {
+            // obtener datos de los puntos de reciclaje
+            const result = await getPuntosReciclaje();
+            console.log(result);
+
+            // renderizar los card de los punto de reciclaje con jquery
+          };
+
+          renderPuntosReciclaje();
+
+        </script>
+
         
 
 </body>
