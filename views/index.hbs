@@ -26,7 +26,8 @@
     </div>
 
     <div class="container" id="puntos">
-      <div class="row">
+      <div id="puntos" class="row">
+
         <div class="card mb-3 col-3 me-1" style="width: 16rem;">
           <img src="/img/centros.jpg" class="card-img-top" alt="..." height="170px" width="170px">
           <div class="card-body">
@@ -299,6 +300,32 @@
             console.log(result);
 
             // renderizar los card de los punto de reciclaje con jquery
+            let cards = '';
+            result.forEach((punto) => {
+              cards += `
+
+                <div class="card mb-3 col-3 me-1" style="width: 16rem;">
+                  <img src="${punto.imagen}" class="card-img-top" alt="reciclaje_image" height="170px" width="170px">
+                  <div class="card-body">
+                    <h5 class="card-title">${punto.nombre}</h5>
+                    <p class="card-text">
+                    <div class="circular-progress verde progress-20"></div>
+                    </p>
+                    <h1 id="porc"></h1>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">${punto.tipo_residuos}</li>
+                    <li class="list-group-item">${punto.direccion}, ${punto.comuna}</li>
+                  </ul>
+                </div>
+
+              `;
+
+            });
+
+            $("#puntos").html(cards);
+            console.log('aqui');
+
           };
 
           renderPuntosReciclaje();

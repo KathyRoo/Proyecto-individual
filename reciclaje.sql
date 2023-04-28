@@ -6,6 +6,7 @@ CREATE TABLE puntos_de_reciclaje (
   nombre VARCHAR(255),
   direccion VARCHAR(255),
   comuna VARCHAR(255),
+  imagen VARCHAR(255),
   tipo_residuos VARCHAR(255)
 );
 
@@ -17,51 +18,52 @@ CREATE TABLE capacidad (
   FOREIGN KEY (punto_de_reciclaje_id) REFERENCES puntos_de_reciclaje(id)
 );
 
-INSERT INTO puntos_de_reciclaje (id, nombre, direccion, comuna, tipo_residuos )
+INSERT INTO puntos_de_reciclaje (id, nombre, direccion, comuna, imagen, tipo_residuos )
 VALUES
-  (1, 'Punto de reciclaje 1', 'Calle Progreso 962', 'Villa Alemana', 'Papel, vidrio, plástico, metal'),
-  (2, 'Punto de reciclaje 2', 'Calle Claudio Vicuña 524', 'Quilpue', 'Papel, plástico'),
-  (3, 'Punto de reciclaje 3', 'Calle Sucre 555', 'Viña del mar', 'Vidrio, metal'),
-  (4, 'Punto de reciclaje 4', 'Avenida Brasil 458', 'Valparaiso', 'Papel, vidrio');
+  (1, 'Punto de reciclaje 1', 'Calle Progreso 962', 'Villa Alemana', '/img/centros.jpg', 'Papel, vidrio, plástico, metal'),
+  (2, 'Punto de reciclaje 2', 'Calle Claudio Vicuña 524', 'Quilpue', '/img/centros2.jpg', 'Papel, plástico'),
+  (3, 'Punto de reciclaje 3', 'Calle Sucre 555', 'Viña del mar', '/img/centros4.jpg', 'Vidrio, metal'),
+  (4, 'Punto de reciclaje 4', 'Avenida Brasil 458', 'Valparaiso', '/img/centros3.jpg', 'Papel, vidrio');
 
 
 INSERT INTO capacidad (id, punto_de_reciclaje_id, fecha_registro, capacidad )
 VALUES
-  (1, 1, '2023-05-01 14:00:00', 20),
-  (2, 2, '2023-05-01 14:00:00', 30),
-  (3, 3, '2023-05-02 14:00:00', 40),
-  (4, 4, '2023-05-02 14:00:00', 50);
-  
+  (1, 1, '2023-05-01 14:00:00', 45),
+  (2, 2, '2023-05-01 14:00:00', 20),
+  (3, 3, '2023-05-02 14:00:00', 70),
+  (4, 4, '2023-05-02 14:00:00', 85);
 
+--Mostrar la información completa de todos los puntos de reciclaje
+
+  SELECT * FROM puntos_de_reciclaje;
+
+--Mostrar la direccion de cada punto de reciclaje
 
 SELECT nombre, direccion FROM puntos_de_reciclaje;
 
---Mostrar los horarios de disponibilidad de todos los puntos de reciclaje:
+--Mostrar la capacidad actual de cada punto de reciclaje
 
-SELECT puntos_de_reciclaje.nombre, disponibilidad.fecha, disponibilidad.horario_de_apertura, disponibilidad.horario_de_cierre
-FROM puntos_de_reciclaje
-INNER JOIN disponibilidad
-ON puntos_de_reciclaje.id = disponibilidad.punto_de_reciclaje_id;
+SELECT pr.nombre, c.capacidad 
+FROM capacidad c 
+INNER JOIN puntos_de_reciclaje pr ON c.punto_de_reciclaje_id = pr.id;
 
---Mostrar los puntos de reciclaje que están disponibles el 1 de mayo de 2023:
-SELECT puntos_de_reciclaje.nombre, disponibilidad.horario_de_apertura, disponibilidad.horario_de_cierre
-FROM puntos_de_reciclaje
-INNER JOIN disponibilidad
-ON puntos_de_reciclaje.id = disponibilidad.punto_de_reciclaje_id
-WHERE disponibilidad.fecha = '2023-05-01';
+--Mostrar los puntos de reciclaje de la comuna de Viña del Mar
 
---Mostrar los puntos de reciclaje que aceptan vidrio como tipo de residuo:
-SELECT nombre, direccion
-FROM puntos_de_reciclaje
-WHERE tipo_de_residuos LIKE '%vidrio%';
+SELECT * FROM puntos_de_reciclaje WHERE comuna = 'Viña del mar';
 
---Mostrar los horarios de disponibilidad de los puntos de reciclaje que están disponibles el 2 de mayo de 2023:
-SELECT puntos_de_reciclaje.nombre, disponibilidad.horario_de_apertura, disponibilidad.horario_de_cierre
-FROM puntos_de_reciclaje
-INNER JOIN disponibilidad
-ON puntos_de_reciclaje.id = disponibilidad.punto_de_reciclaje_id
-WHERE disponibilidad.fecha = '2023-05-02';
+--Mostrar la capacidad promedio de todos los puntos de reciclaje
 
+SELECT AVG(capacidad) FROM capacidad;
 
+--Mostrar la capacidad máxima registrada en cada punto de reciclaje
+
+SELECT pr.nombre, MAX(c.capacidad) 
+FROM capacidad c 
+INNER JOIN puntos_de_reciclaje pr ON c.punto_de_reciclaje_id = pr.id 
+GROUP BY pr.nombre;
+
+--Mostrar la capacidad actual de un punto de reciclaje específico (por ejemplo, el punto de reciclaje con ID 1):
+
+SELECT capacidad FROM capacidad WHERE punto_de_reciclaje_id = 1 ORDER BY fecha_registro DESC LIMIT 1;
 
 
