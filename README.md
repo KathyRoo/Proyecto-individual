@@ -1,6 +1,6 @@
-# Proyecto de reciclaje Kathy Roo
+# Proyecto de reciclaje Katherine Canales
 
-En este proyecto muestra centros de reciclaje.
+En este proyecto se muestran centros de reciclaje, su ubicación, disponibilidad y material que recibe.
 
 https://github.com/KathyRoo/Proyecto-individual
 
