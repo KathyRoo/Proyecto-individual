@@ -67,4 +67,3 @@ GROUP BY pr.nombre;
 
 SELECT capacidad FROM capacidad WHERE punto_de_reciclaje_id = 1 ORDER BY fecha_registro DESC LIMIT 1;
 
-

@@ -16,3 +16,5 @@ npm run dev
 
 3. visualizar el resultado en http://localhost:3000
 
+4. API http://localhost:3000/api/puntos-de-reciclaje
+
