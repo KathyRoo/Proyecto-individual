@@ -15,19 +15,19 @@ CREATE TABLE capacidad (
   id INT PRIMARY KEY,
   punto_de_reciclaje_id INT,
   fecha_registro TIMESTAMP  NOT NULL,
-  capacidad INT NOT NULL DEFAULT 0,
+  llenado INT NOT NULL DEFAULT 0,
   FOREIGN KEY (punto_de_reciclaje_id) REFERENCES puntos_de_reciclaje(id)
 );
 
-INSERT INTO puntos_de_reciclaje (id, nombre, direccion, comuna, imagen, capacidad, tipo_residuos )
+INSERT INTO puntos_de_reciclaje (id, nombre, direccion, comuna, imagen, tipo_residuos )
 VALUES
-  (1, 'Punto de reciclaje 1', 'Calle Progreso 962', 'Villa Alemana', '/img/centros.jpg', 45,'Papel, vidrio, plástico, metal'),
-  (2, 'Punto de reciclaje 2', 'Calle Claudio Vicuña 524', 'Quilpue', '/img/centros2.jpg', 20,'Papel, plástico'),
-  (3, 'Punto de reciclaje 3', 'Calle Sucre 555', 'Viña del mar', '/img/centros4.jpg', 70, 'Vidrio, metal'),
-  (4, 'Punto de reciclaje 4', 'Avenida Brasil 458', 'Valparaiso', '/img/centros3.jpg', 85, 'Papel, vidrio');
+  (1, 'Punto de reciclaje 1', 'Calle Progreso 962', 'Villa Alemana', '/img/centros.jpg','Papel, vidrio, plástico, metal'),
+  (2, 'Punto de reciclaje 2', 'Calle Claudio Vicuña 524', 'Quilpue', '/img/centros2.jpg', 'Papel, plástico'),
+  (3, 'Punto de reciclaje 3', 'Calle Sucre 555', 'Viña del mar', '/img/centros4.jpg', 'Vidrio, metal'),
+  (4, 'Punto de reciclaje 4', 'Avenida Brasil 458', 'Valparaiso', '/img/centros3.jpg', 'Papel, vidrio');
 
 
-INSERT INTO capacidad (id, punto_de_reciclaje_id, fecha_registro, capacidad )
+INSERT INTO capacidad (id, punto_de_reciclaje_id, fecha_registro, llenado )
 VALUES
   (1, 1, '2023-05-01 14:00:00', 45),
   (2, 2, '2023-05-01 14:00:00', 20),
