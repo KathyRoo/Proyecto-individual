@@ -23,27 +23,90 @@ npm run dev
 
 # Revision de evaluación
 
-1.Selecciona  las columnas requeridas para presentar información
+### 1.Selecciona  las columnas requeridas para presentar información
 revisar `database.js`
-
 ```javascript
-text: 'SELECT id, nombre, direccion, comuna, imagen, capacidad FROM puntos_de_reciclaje',
+const qText= `
+            SELECT 
+                pr.id,
+                pr.nombre,
+                pr.direccion,
+                pr.comuna,
+                pr.region,
+                pr.imagen,
+                pr.tipo_residuos,
+                c.llenado
+            FROM puntos_de_reciclaje pr
+            INNER JOIN capacidad c
+            ON 
+                pr.id = c.punto_de_reciclaje_id
+            WHERE
+                pr.region = 'V'
+        `;
 ```
 
-1. Utilización correcta de estructuras de datos
+
+### 1. Utiliza Join 
+revisar `database.js`
+```javascript
+const qText= `
+            SELECT 
+                pr.id,
+                pr.nombre,
+                pr.direccion,
+                pr.comuna,
+                pr.region,
+                pr.imagen,
+                pr.tipo_residuos,
+                c.llenado
+            FROM puntos_de_reciclaje pr
+            INNER JOIN capacidad c
+            ON 
+                pr.id = c.punto_de_reciclaje_id
+            WHERE
+                pr.region = 'V'
+        `;
+```
+
+### 1. Utiliza WHERE
+revisar `database.js`
+```javascript
+const qText= `
+            SELECT 
+                pr.id,
+                pr.nombre,
+                pr.direccion,
+                pr.comuna,
+                pr.region,
+                pr.imagen,
+                pr.tipo_residuos,
+                c.llenado
+            FROM puntos_de_reciclaje pr
+            INNER JOIN capacidad c
+            ON 
+                pr.id = c.punto_de_reciclaje_id
+            WHERE
+                pr.region = 'V'
+        `;
+```
+
+
+
+
+### 1. Utilización correcta de estructuras de datos
 Revisar `index.hbs` y `database.js`
 
-1. Inclusion de paquetes y librerias de usuario
+### 1. Inclusion de paquetes y librerias de usuario
 Revisar `app.js` se incluse importación módulo que contiene la clase
 
-1. agrupación del código y separación de funcionalidades
+### 1. agrupación del código y separación de funcionalidades
 
 En los distintos archivo se demuestra el apropiado uso de separación de codigo y funcionalidades. 
 En particular, 
 Se utiliza handlebars para separar las distintas vistas, incAPI se realiza en la vista que corresponde. 
 Los llamados a base de datos se realizan desde la clase DatabaseManager.
 
-1. Se utiliza de funciones asincróncronicamente. 
+### 1. Se utiliza de funciones asincróncronicamente. 
 Revisar `index.hbs` y `database.js`
 ```
 app.get('/api/puntos-de-reciclaje', async (req, res) => {
@@ -57,7 +120,7 @@ app.get('/api/puntos-de-reciclaje', async (req, res) => {
 });
 ```
 
-1. Conexión desde a base de datos desde node
+### 1. Conexión desde a base de datos desde node
 Revisar `database.js`
 ```
 constructor(){
@@ -74,7 +137,7 @@ constructor(){
 }
 ```
 
-1. Ejecución y consultas desde node
+### 1. Ejecución y consultas desde node
 
 ```
 try {
@@ -85,7 +148,7 @@ try {
 }
 ```
 
-1. Creacion servicio Rest son Express
+### 1. Creacion servicio Rest son Express
 
 revisar `app.js` middleware 
 
