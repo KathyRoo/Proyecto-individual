@@ -23,7 +23,7 @@ npm run dev
 
 # Revision de evaluación
 
-### 1.Selecciona  las columnas requeridas para presentar información
+###Selecciona  las columnas requeridas para presentar información
 revisar `database.js`
 ```javascript
 const qText= `
@@ -46,7 +46,7 @@ const qText= `
 ```
 
 
-### 1. Utiliza Join 
+### Utiliza Join 
 revisar `database.js`
 ```javascript
 const qText= `
@@ -68,7 +68,7 @@ const qText= `
         `;
 ```
 
-### 1. Utiliza WHERE
+### Utiliza WHERE
 revisar `database.js`
 ```javascript
 const qText= `
@@ -93,20 +93,20 @@ const qText= `
 
 
 
-### 1. Utilización correcta de estructuras de datos
+### Utilización correcta de estructuras de datos
 Revisar `index.hbs` y `database.js`
 
-### 1. Inclusion de paquetes y librerias de usuario
+### Inclusion de paquetes y librerias de usuario
 Revisar `app.js` se incluse importación módulo que contiene la clase
 
-### 1. agrupación del código y separación de funcionalidades
+### agrupación del código y separación de funcionalidades
 
 En los distintos archivo se demuestra el apropiado uso de separación de codigo y funcionalidades. 
 En particular, 
 Se utiliza handlebars para separar las distintas vistas, incAPI se realiza en la vista que corresponde. 
 Los llamados a base de datos se realizan desde la clase DatabaseManager.
 
-### 1. Se utiliza de funciones asincróncronicamente. 
+### Se utiliza de funciones asincróncronicamente. 
 Revisar `index.hbs` y `database.js`
 ```
 app.get('/api/puntos-de-reciclaje', async (req, res) => {
@@ -120,7 +120,7 @@ app.get('/api/puntos-de-reciclaje', async (req, res) => {
 });
 ```
 
-### 1. Conexión desde a base de datos desde node
+### Conexión desde a base de datos desde node
 Revisar `database.js`
 ```
 constructor(){
@@ -137,7 +137,7 @@ constructor(){
 }
 ```
 
-### 1. Ejecución y consultas desde node
+### Ejecución y consultas desde node
 
 ```
 try {
@@ -148,7 +148,7 @@ try {
 }
 ```
 
-### 1. Creacion servicio Rest son Express
+### Creacion servicio Rest son Express
 
 revisar `app.js` middleware 
 
